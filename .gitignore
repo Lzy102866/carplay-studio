@@ -1,0 +1,11 @@
+# 密钥与生成物不要提交
+vault.key
+*.xcodeproj
+xcuserdata/
+build/
+DerivedData/
+
+# 明文素材只保留在源目录，别放回 Resources
+CarPlayWallpaperStudioShell/Resources/*.jpg
+CarPlayWallpaperStudioShell/Resources/*.jpeg
+CarPlayWallpaperStudioShell/Resources/*.png

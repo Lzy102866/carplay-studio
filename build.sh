@@ -39,7 +39,15 @@ else
     -derivedDataPath build \
     CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGNING_IDENTITY="" build
 
-  APP="build/Build/Products/$CONFIG-iphoneos/$SCHEME.app"
+  # 产物名由 PRODUCT_NAME 决定，不一定是 scheme 名，这里动态找
+  APP=$(find build/Build/Products -maxdepth 3 -type d -name "*.app" | head -n 1)
+  if [ -z "$APP" ] || [ ! -d "$APP" ]; then
+    echo "[!] 没找到编译产物 .app，下面是 build/Build/Products 的内容：" >&2
+    find build/Build/Products -maxdepth 3 >&2 || true
+    exit 1
+  fi
+  echo "    产物：$APP"
+
   rm -rf Payload "$SCHEME.ipa"
   mkdir -p Payload
   cp -R "$APP" Payload/

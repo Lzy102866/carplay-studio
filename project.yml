@@ -23,14 +23,13 @@ targets:
     settings:
       base:
         PRODUCT_BUNDLE_IDENTIFIER: com.example.CarPlayWallpaperStudio
-        PRODUCT_NAME: CarPlayWallpaperStudio
         TARGETED_DEVICE_FAMILY: "1"
         ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
         ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
         GENERATE_INFOPLIST_FILE: NO
         ENABLE_USER_SCRIPT_SANDBOXING: YES
     info:
-      path: CarPlayWallpaperStudioShell/Info.plist
+      path: Support/Info.plist
       properties:
         CFBundleDisplayName: 壁纸工坊
         CFBundleShortVersionString: "2.0.0"
